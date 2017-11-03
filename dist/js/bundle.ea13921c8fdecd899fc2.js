@@ -11492,16 +11492,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			(0, _canvas_anime.drawElder)();
 		}
 	});
-	(0, _jquery2.default)(window).on('mousewheel', function () {
-		if (event.deltaY > 0 || event.deltaX > 0) {
-			console.log("go");
-			Hscroll++;
-		} else {
-			console.log("back");
-			Hscroll--;
-		}
-		(0, _jquery2.default)(".scaneWrapper").scrollLeft(Hscroll);
-	});
+	if (w >= 1024) {
+		(0, _jquery2.default)(window).on('mousewheel', function () {
+			if (event.deltaY > 0) {
+				console.log("go");
+				Hscroll += w / 200;
+			} else {
+				console.log("back");
+				Hscroll -= w / 200;
+			}
+			(0, _jquery2.default)(".scaneWrapper").scrollLeft(Hscroll);
+		});
+	}
 });
 
 /***/ }),
@@ -11512,4 +11514,4 @@ module.exports = __webpack_require__.p + "image/114f4f333b09dde13b910291b8a7b9cf
 
 /***/ })
 ],[2]);
-//# sourceMappingURL=bundle.b513bfaffa97f0a2aac0.js.map
+//# sourceMappingURL=bundle.ea13921c8fdecd899fc2.js.map

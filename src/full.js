@@ -57,15 +57,16 @@ import {drawElder, curFrame} from './canvas_anime.js'
 			drawElder()	
 		}
 	});
-	$(window).on('mousewheel', function(){
-		if(event.deltaY > 0 || event.deltaX > 0){
-			console.log("go")
-			Hscroll ++;
-		} else {
-			console.log("back")
-			Hscroll --;
-		}
-		$(".scaneWrapper").scrollLeft(Hscroll);
-
-	})
+	if( w >= 1024) {
+		$(window).on('mousewheel', function(){
+			if(event.deltaY > 0){
+				console.log("go")
+				Hscroll += w/200;
+			} else {
+				console.log("back")
+				Hscroll -= w/200;
+			}
+			$(".scaneWrapper").scrollLeft(Hscroll);
+		})
+	}
 }));
