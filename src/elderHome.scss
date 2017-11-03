@@ -1,0 +1,99 @@
+#elder{
+	position: fixed;
+	top: 70%;
+	left: 50%;
+	margin-left: -54px;
+	z-index: 100;
+	pointer-events: none;
+}
+.scrolling{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: pink;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	display: flex;
+	transition: 2s;
+	z-index: 0;
+}
+#scrollWrapper{
+	position: relative;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	transition: transform 2s;
+}
+.scaneWrapper{
+	z-index: 0;
+	transition: 3s;
+	flex-shrink: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: scroll; 
+	display: flex;
+}
+.scane{
+	z-index: 0;
+	padding-top: 50px;
+	flex-shrink: 0;
+	width: 100%;
+	height: 100%;
+}
+.banner{
+	background-color: lightblue;
+}
+.intro{
+	background-color: lightyellow;
+}
+.quizIntro{
+	background-color: violet;
+	h2{
+		text-align: center;
+		cursor: pointer;
+	}
+}
+.quiz{
+	flex-shrink: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 50px;
+	transition: 2s;
+	background-color: gray;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	h2{
+		width: 100%;
+		text-align: center;
+	}
+	p{
+		width: 33%;
+		text-align: center;
+		cursor: pointer;	
+	}
+}
+.answer{
+	flex-shrink: 0;
+	width: 100%;
+	height: 100%;
+	background-color: blue;
+	position: relative;
+	div{
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		padding-top: 50px;
+	}
+	.ansA{
+		background-color: yellow;		
+	}
+	.ansB{
+		background-color: green;	
+	}
+}
