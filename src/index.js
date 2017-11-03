@@ -2,7 +2,7 @@ import "./elderHome.scss";
 
 import $ from 'jquery'
 import 'lazysizes'
-
+import 'jquery-mousewheel'
 import './full.js'
 import './canvas_anime.js'
 

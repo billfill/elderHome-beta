@@ -55,6 +55,13 @@ import {drawElder, curFrame} from './canvas_anime.js'
 		}
 	});
 	$(window).on('mousewheel', function(){
-		console.log("3333333")
+		// console.log("X: "+event.deltaX)
+		if(event.deltaX >= 0){
+			console.log("up")
+		} else {
+			console.log("down")
+		}
+		// console.log("Y: "+event.deltaY);
+
 	})
 }));
