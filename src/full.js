@@ -7,12 +7,11 @@ import {drawElder, curFrame} from './canvas_anime.js'
 	let scrollIndex = 0;
 	let quizSection = 0;
 
-	let quizAnsShow = []
-
 	let SIDdrawElder;
 	$('.scrolling').css("height", h)
-	// $('.quiz').css("height", h)
-	
+
+	drawElder()
+
 	function nextQuiz () {
 		if(SIDdrawElder !== undefined){
 			clearInterval(SIDdrawElder)
@@ -41,7 +40,6 @@ import {drawElder, curFrame} from './canvas_anime.js'
 	})	
 	$('.quiz p').on("click", function(){
 		nextQuiz();
-		console.log($(this).index())
 		if($(this).index() == 1 ){
 			$('.ansA').eq(quizSection).css("display", "block")
 		} else {
@@ -56,4 +54,7 @@ import {drawElder, curFrame} from './canvas_anime.js'
 			drawElder()	
 		}
 	});
+	$(window).on('mousewheel', function(){
+		console.log("3333333")
+	})
 }));

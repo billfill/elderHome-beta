@@ -34,7 +34,6 @@ function drawElder () {
 	ctx.drawImage(elder,srcX,srcY,width,height,x,y,width,height);
 }
 $(function(){
-	drawElder()
 	$('.scaneWrapper').on('scroll', function () {
 		let stopForQuiz = $(this).children('.quizIntro').offset().left
 		if( stopForQuiz == 0){
