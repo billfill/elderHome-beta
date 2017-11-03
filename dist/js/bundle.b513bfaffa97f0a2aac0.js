@@ -11442,6 +11442,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	var w = (0, _jquery2.default)(window).width();
 	var scrollIndex = 0;
 	var quizSection = 0;
+	var Hscroll = 0;
 
 	var SIDdrawElder = void 0;
 	(0, _jquery2.default)('.scrolling').css("height", h);
@@ -11486,18 +11487,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	});
 	(0, _jquery2.default)('.scaneWrapper').on('scroll', function () {
 		var draw = (0, _jquery2.default)(this).scrollLeft();
+		Hscroll = draw;
 		if (draw % 5 == 0) {
 			(0, _canvas_anime.drawElder)();
 		}
 	});
 	(0, _jquery2.default)(window).on('mousewheel', function () {
-		// console.log("X: "+event.deltaX)
-		if (event.deltaX >= 0) {
-			console.log("up");
+		if (event.deltaY > 0 || event.deltaX > 0) {
+			console.log("go");
+			Hscroll++;
 		} else {
-			console.log("down");
+			console.log("back");
+			Hscroll--;
 		}
-		// console.log("Y: "+event.deltaY);
+		(0, _jquery2.default)(".scaneWrapper").scrollLeft(Hscroll);
 	});
 });
 
@@ -11509,4 +11512,4 @@ module.exports = __webpack_require__.p + "image/114f4f333b09dde13b910291b8a7b9cf
 
 /***/ })
 ],[2]);
-//# sourceMappingURL=bundle.a4547757e4b82e6e7dc9.js.map
+//# sourceMappingURL=bundle.b513bfaffa97f0a2aac0.js.map

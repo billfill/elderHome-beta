@@ -6,6 +6,8 @@ import {drawElder, curFrame} from './canvas_anime.js'
 	let w = $(window).width();
 	let scrollIndex = 0;
 	let quizSection = 0;
+	let Hscroll = 0;
+
 
 	let SIDdrawElder;
 	$('.scrolling').css("height", h)
@@ -50,18 +52,20 @@ import {drawElder, curFrame} from './canvas_anime.js'
 	})
 	$('.scaneWrapper').on('scroll', function () {
 		const draw = $(this).scrollLeft()
+		Hscroll = draw
 		if( draw % 5 == 0){
 			drawElder()	
 		}
 	});
 	$(window).on('mousewheel', function(){
-		// console.log("X: "+event.deltaX)
-		if(event.deltaX >= 0){
-			console.log("up")
+		if(event.deltaY > 0 || event.deltaX > 0){
+			console.log("go")
+			Hscroll ++;
 		} else {
-			console.log("down")
+			console.log("back")
+			Hscroll --;
 		}
-		// console.log("Y: "+event.deltaY);
+		$(".scaneWrapper").scrollLeft(Hscroll);
 
 	})
 }));
