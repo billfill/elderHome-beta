@@ -1,3 +1,6 @@
+body {
+  overflow: hidden; }
+
 #elder {
   position: fixed;
   top: 70%;
@@ -112,4 +115,4 @@
   .answer .ansB {
     background-color: green; }
 
-/*# sourceMappingURL=bundle.c5f7f0439dcee1e7cb47f30a39e20780.css.map*/
+/*# sourceMappingURL=bundle.072318cc75fa890ed132a2b12a355cec.css.map*/
